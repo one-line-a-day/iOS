@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Note: Codable, Equatable {
+struct Line: Codable, Equatable {
     
     var text: String
     var date: Date
@@ -17,4 +17,11 @@ struct Note: Codable, Equatable {
     init(text: String, date: Date = Date(), image: Data? = nil) {
         (self.text, self.date, self.image) = (text, date, image)
     }
+}
+
+struct User: Codable, Equatable {
+    var username: String
+    var email: String
+    var password: String
+    var notes: [Line]
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteController {
+class LineController {
     
     // Create Note
     // Delete Note
