@@ -11,17 +11,12 @@ import UIKit
 struct Line: Codable, Equatable {
     
     var line: String
-    var date: String
+    var date: Date
+    var identifier: String?
     var imgUrl: URL?
-    var dateData: Date?
     
-    enum CodingKeys: String, CodingKey {
-        case line
-        case date
-    }
-    
-    init(line: String, date: String, imgUrl: URL? = nil, dateData: Date = Date()) {
-        (self.line, self.date, self.imgUrl, self.dateData) = (line, date, imgUrl, dateData)
+    init(line: String, date: Date = Date(), imgUrl: URL? = nil, identifier: String = UUID().uuidString) {
+        (self.line, self.date, self.imgUrl, self.identifier) = (line, date, imgUrl, identifier)
     }
 }
 
@@ -30,5 +25,9 @@ struct User: Codable, Equatable {
     var username: String
     var email: String
     var password: String
+    var userLines: Lines
+}
+
+struct Lines: Codable, Equatable {
     var lines: [Line]
 }

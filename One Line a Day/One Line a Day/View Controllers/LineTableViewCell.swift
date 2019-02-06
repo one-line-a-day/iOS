@@ -13,7 +13,7 @@ class LineTableViewCell: UITableViewCell {
     private func updateViews() {
         guard let line = line else {return}
         
-        dateLabel.text = line.date
+       // dateLabel.text = "\(line.date)"
         lineLabel.text = line.line
     }
     

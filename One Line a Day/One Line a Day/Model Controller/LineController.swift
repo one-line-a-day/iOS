@@ -8,7 +8,7 @@
 
 import UIKit
 
-let baseURL = URL(string: "https://one-line-a-day-backend.herokuapp.com/api")!
+let baseURL = URL(string: "https://one-line-36d4f.firebaseio.com/")!
 
 enum httpMethod: String {
     case put = "PUT"
@@ -19,7 +19,7 @@ enum httpMethod: String {
 class LineController {
     
     func fetchLines(completion: @escaping (Error?) -> Void) {
-        let url = baseURL.appendingPathComponent("lines").appendingPathComponent("testcalls").appendingPathExtension("json")
+        let url = baseURL.appendingPathExtension("json")
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
@@ -33,9 +33,9 @@ class LineController {
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 do {
-                    let linesDictionary = try jsonDecoder.decode([Line].self, from: data)
-                    
-                    self.lines = linesDictionary
+                    let linesDictionary = try jsonDecoder.decode([String : Line].self, from: data)
+                    let lines = linesDictionary.map { $0.value }
+                    self.lines = lines
                     completion(nil)
                 } catch {
                     NSLog("could not decode data.")
@@ -48,34 +48,22 @@ class LineController {
     }
     
     // Create Note
-    func createLine(lineString: String, date: String, completion: @escaping (Error?) -> Void) {
-        let line = Line(line: lineString, date: date)
+    func createLine(lineString: String, completion: @escaping (Error?) -> Void) {
+        let line = Line(line: lineString)
         put(line: line, completion: completion)
-    }
-    
-    // Delete Note
-    
-    func delete(line: Line, completion: @escaping (Error?) -> Void) {
-        
-        
-        
     }
     
     // Update line and server
     func updateLine(line: Line, lineString: String, completion: @escaping (Error?) -> Void) {
         guard let index = lines.index(of: line) else { return }
-        
         lines[index].line = lineString
-        
         put(line: lines[index], completion: completion)
     }
     
-    // FETCH from server
     // PUT to server
     
     func put(line: Line, completion: @escaping (Error?) -> Void) {
-        let url = baseURL.appendingPathComponent("lines").appendingPathComponent("testcall")
-            .appendingPathExtension("json")
+        let url = baseURL.appendingPathComponent(line.identifier!).appendingPathExtension("json")
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod.put.rawValue
@@ -102,6 +90,25 @@ class LineController {
     
     // DELETE from server
     
+    func delete(line: Line, completion: @escaping (Error?) -> Void) {
+        let url = baseURL.appendingPathComponent(line.identifier!).appendingPathExtension("json")
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod.delete.rawValue
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (_, _, error) in
+            if let error = error {
+                NSLog("error trying to delete data: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let index = self.lines.index(of: line) else { return }
+            self.lines.remove(at: index)
+            completion(nil)
+        }
+        dataTask.resume()
+    }
     
     // MARK: - Properties
     

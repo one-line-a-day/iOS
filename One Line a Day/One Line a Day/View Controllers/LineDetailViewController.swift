@@ -10,19 +10,31 @@ import UIKit
 
 class LineDetailViewController: UIViewController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         lineView.becomeFirstResponder()
     }
 
     @IBAction func done(_ sender: Any) {
+        guard let lineString = lineView.text, !lineString.isEmpty else { return }
         
-        
-        dismiss(animated: true, completion: nil)
+        lineController?.createLine(lineString: lineString, completion: { (error) in
+            if let error = error {
+                NSLog("Could not create line: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
     }
     
     
      // MARK: - Properties
+    
+    var line: Line?
+    
+    var lineController: LineController?
 
     @IBOutlet var lineView: UITextView!
 }
