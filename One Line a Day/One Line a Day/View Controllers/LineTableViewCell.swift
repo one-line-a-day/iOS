@@ -9,11 +9,22 @@
 import UIKit
 
 class LineTableViewCell: UITableViewCell {
-
     
+    private func updateViews() {
+        guard let line = line else {return}
+        
+        dateLabel.text = line.date
+        lineLabel.text = line.line
+    }
     
+    // MARK: - Properties
     
+    var line: Line? {
+        didSet {
+            updateViews()
+        }
+    }
     
-     // MARK: - Properties
-
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var lineLabel: UILabel!
 }

@@ -9,8 +9,14 @@
 import UIKit
 
 class LineDetailViewController: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lineView.becomeFirstResponder()
+    }
 
     @IBAction func done(_ sender: Any) {
+        
         
         dismiss(animated: true, completion: nil)
     }
@@ -18,4 +24,5 @@ class LineDetailViewController: UIViewController {
     
      // MARK: - Properties
 
+    @IBOutlet var lineView: UITextView!
 }

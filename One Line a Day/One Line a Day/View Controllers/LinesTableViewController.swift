@@ -15,25 +15,32 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.reloadData()
-        
+        linesController.fetchLines { (error) in
+            if let error = error {
+                NSLog("Could not fetch data: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LineCell", for: indexPath) as! LineTableViewCell
         
-        
+//        let line = linesController.lines[indexPath.row]
+//        cell.line = line
         
         return cell
     }
     
-    
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
@@ -43,7 +50,8 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK: - Properties
     
-
+    let linesController = LineController()
+    
     @IBOutlet var tableView: UITableView!
     
 }

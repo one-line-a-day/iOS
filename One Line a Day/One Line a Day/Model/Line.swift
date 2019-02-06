@@ -10,18 +10,25 @@ import UIKit
 
 struct Line: Codable, Equatable {
     
-    var text: String
-    var date: Date
-    var image: Data?
+    var line: String
+    var date: String
+    var imgUrl: URL?
+    var dateData: Date?
     
-    init(text: String, date: Date = Date(), image: Data? = nil) {
-        (self.text, self.date, self.image) = (text, date, image)
+    enum CodingKeys: String, CodingKey {
+        case line
+        case date
+    }
+    
+    init(line: String, date: String, imgUrl: URL? = nil, dateData: Date = Date()) {
+        (self.line, self.date, self.imgUrl, self.dateData) = (line, date, imgUrl, dateData)
     }
 }
 
 struct User: Codable, Equatable {
+    
     var username: String
     var email: String
     var password: String
-    var notes: [Line]
+    var lines: [Line]
 }

@@ -19,6 +19,7 @@
 		394F88EC2208F6EA000BA548 /* LineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */; };
 		394F88EE2208F71A000BA548 /* LineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88ED2208F71A000BA548 /* LineDetailViewController.swift */; };
 		394F88F02208F728000BA548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88EF2208F728000BA548 /* ProfileViewController.swift */; };
+		394F88F2220B70C6000BA548 /* TenYearCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88F1220B70C6000BA548 /* TenYearCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewCell.swift; sourceTree = "<group>"; };
 		394F88ED2208F71A000BA548 /* LineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetailViewController.swift; sourceTree = "<group>"; };
 		394F88EF2208F728000BA548 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		394F88F1220B70C6000BA548 /* TenYearCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenYearCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */,
 				394F88ED2208F71A000BA548 /* LineDetailViewController.swift */,
 				394F88EF2208F728000BA548 /* ProfileViewController.swift */,
+				394F88F1220B70C6000BA548 /* TenYearCellTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				394F88EE2208F71A000BA548 /* LineDetailViewController.swift in Sources */,
 				394F88DF2208BBE0000BA548 /* LineController.swift in Sources */,
 				394F88E82208F4AD000BA548 /* SignUpViewController.swift in Sources */,
+				394F88F2220B70C6000BA548 /* TenYearCellTableViewCell.swift in Sources */,
 				394F88DD2208BB46000BA548 /* Line.swift in Sources */,
 				394F88EA2208F5C5000BA548 /* LinesTableViewController.swift in Sources */,
 				394F88F02208F728000BA548 /* ProfileViewController.swift in Sources */,
