@@ -25,7 +25,11 @@ struct User: Codable, Equatable {
     var username: String
     var email: String
     var password: String
-    var userLines: Lines
+    var userLines: Lines?
+    
+    init(username: String, email: String, password: String) {
+        (self.username, self.email, self.password) = (username, email, password)
+    }
 }
 
 struct Lines: Codable, Equatable {

@@ -10,11 +10,18 @@ import UIKit
 
 class LinesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.hidesBackButton = true
+        prevButton.isHidden = true
+        nextButton.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
         
         lineController.fetchLines { (error) in
             if let error = error {
@@ -23,8 +30,19 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.updateViews()
             }
         }
+    }
+    
+    private func updateViews() {
+        
+        
+        guard let oldLine = lineController.lines.last else {
+            oldestLine.text = "\"You don't have a line. \n Let's change that.\""
+            return }
+        
+        oldestLine.text = "\"\(oldLine.line)\""
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,7 +50,8 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Test"
+        
+        return "Feb 2019"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +78,7 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 DispatchQueue.main.async {
                     tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.updateViews()
                 }
             }
         }
@@ -71,6 +91,12 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
             guard let destination = segue.destination as? LineDetailViewController else { return }
             
             destination.lineController = lineController
+        } else if segue.identifier == "ViewLine" {
+            guard let destination = segue.destination as? LineDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            destination.lineController = lineController
+            destination.line = lineController.lines[indexPath.row]
         }
     }
     
@@ -80,4 +106,9 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
     let lineController = LineController()
     
     @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var prevButton: UIButton!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var oldestLine: UILabel!
+    
 }

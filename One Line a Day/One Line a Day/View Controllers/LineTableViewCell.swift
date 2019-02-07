@@ -13,7 +13,17 @@ class LineTableViewCell: UITableViewCell {
     private func updateViews() {
         guard let line = line else {return}
         
-       // dateLabel.text = "\(line.date)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "EEEE"
+        
+        let month = dateFormatter.string(from: line.date)
+        let day = dayFormatter.string(from: line.date)
+        
+        dayLabel.text = day
+        dateLabel.text = month
         lineLabel.text = line.line
     }
     
@@ -25,6 +35,7 @@ class LineTableViewCell: UITableViewCell {
         }
     }
     
+    @IBOutlet var dayLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var lineLabel: UILabel!
 }

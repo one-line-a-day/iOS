@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "One Line a Day/View Controllers/SignUpViewController.swift"
+            timestampString = "571269845.665181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "SignUpViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "One_Line_a_Day.SignUpViewController.users.getter : Swift.Array&lt;One_Line_a_Day.User&gt;"
+                  moduleName = "One Line a Day"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mosesrobinson/Desktop/LAMBDA%20SCHOOL/Developement/iOS/One%20Line%20a%20Day/One%20Line%20a%20Day/View%20Controllers/SignUpViewController.swift"
+                  timestampString = "571269845.673345"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "One_Line_a_Day.SignUpViewController.users.setter : Swift.Array&lt;One_Line_a_Day.User&gt;"
+                  moduleName = "One Line a Day"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mosesrobinson/Desktop/LAMBDA%20SCHOOL/Developement/iOS/One%20Line%20a%20Day/One%20Line%20a%20Day/View%20Controllers/SignUpViewController.swift"
+                  timestampString = "571269845.676181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "One_Line_a_Day.SignUpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; One_Line_a_Day.SignUpViewController"
+                  moduleName = "One Line a Day"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mosesrobinson/Desktop/LAMBDA%20SCHOOL/Developement/iOS/One%20Line%20a%20Day/One%20Line%20a%20Day/View%20Controllers/SignUpViewController.swift"
+                  timestampString = "571269845.679649"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "One_Line_a_Day.SignUpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;One_Line_a_Day.SignUpViewController&gt;"
+                  moduleName = "One Line a Day"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mosesrobinson/Desktop/LAMBDA%20SCHOOL/Developement/iOS/One%20Line%20a%20Day/One%20Line%20a%20Day/View%20Controllers/SignUpViewController.swift"
+                  timestampString = "571269845.6824009"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

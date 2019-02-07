@@ -30,11 +30,11 @@ class LineController {
             
             if let data = data {
                 let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+               // jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 do {
                     let linesDictionary = try jsonDecoder.decode([String : Line].self, from: data)
-                    let lines = linesDictionary.map { $0.value }
+                    let lines = linesDictionary.map({ $0.value }).sorted(by: {$0.date > $1.date })
                     self.lines = lines
                     completion(nil)
                 } catch {
