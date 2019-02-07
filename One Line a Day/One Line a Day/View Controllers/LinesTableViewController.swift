@@ -56,7 +56,7 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let header = view as! UITableViewHeaderFooterView
         
-        header.textLabel?.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        header.textLabel?.textColor = #colorLiteral(red: 0.1801737547, green: 0.1791095138, blue: 0.1809961498, alpha: 1)
         header.contentView.backgroundColor = #colorLiteral(red: 0.8860269189, green: 0.3269340992, blue: 0.3611180782, alpha: 1)
     }
     
@@ -69,7 +69,9 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let line = lineController.lines[indexPath.row]
         cell.line = line
-        
+        cell.backgroundColor = #colorLiteral(red: 0.9985807538, green: 0.9596754909, blue: 0.9514060616, alpha: 1)
+        cell.selectionStyle = .none
+    
         return cell
     }
     
