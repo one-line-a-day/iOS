@@ -14,23 +14,30 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         emailTextField.isHidden = true
+        signupLabel.isHidden = true
         title = "Log In"
+        
+        guard AuthenticationHelper.currentUser != nil else { return }
+        
+        performSegue(withIdentifier: "ShowLines", sender: nil)
     }
-    
     
     @IBAction func signUp(_ sender: Any) {
         title = "Sign Up"
+        signupLabel.isHidden = true
         UITextField.animate(withDuration: 0.2) {
             self.emailTextField.isHidden = false
         }
         
         guard let username = usernameTextField.text, !username.isEmpty,
-        let password = passwordTextField.text, !password.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty,
             let email = emailTextField.text, !email.isEmpty else { return }
         
-        let user = User(username: username, email: email, password: password)
-        users.append(user)
+        let userLogin = username+password
         
+        AuthenticationHelper.setCurrentUser(to: userLogin)
+        
+        performSegue(withIdentifier: "ShowLines", sender: nil)
     }
     
     @IBAction func logIn(_ sender: Any) {
@@ -43,30 +50,17 @@ class SignUpViewController: UIViewController {
         }
         
         guard let username = usernameTextField.text, !username.isEmpty,
-            let password = passwordTextField.text, !password.isEmpty,
-            let user = user else { return }
-        
-        let loggingUser = User(username: username, email: user.email, password: password)
-        
-        
-        if users.contains(user) {
-            AuthenticationHelper.setCurrentUser(to: user)
-            performSegue(withIdentifier: "ShowLines", sender: nil)
-        }
-    }
-    
-    
-    @IBAction func skipPage(_ sender: Any) {
-        performSegue(withIdentifier: "ShowLines", sender: nil)
+            let password = passwordTextField.text, !password.isEmpty else { return }
+        signupLabel.isHidden = false
     }
     
     // MARK: - Properties
     
-    var users: [User] = []
     
     var user: User?
     
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var signupLabel: UILabel!
 }

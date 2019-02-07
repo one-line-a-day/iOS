@@ -10,12 +10,12 @@ import Foundation
 
 enum AuthenticationHelper {
     
-    static func setCurrentUser(to user: User) {
+    static func setCurrentUser(to user: String) {
         UserDefaults.standard.set(user, forKey: currentUserKey)
     }
     
-    static var currentUser: User {
-        return UserDefaults.standard.object(forKey: currentUserKey) as! User
+    static var currentUser: String? {
+        return UserDefaults.standard.string(forKey: currentUserKey)
     }
     
     static private let currentUserKey = "CurrentUser"

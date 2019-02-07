@@ -36,8 +36,6 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     private func updateViews() {
-        
-        
         guard let oldLine = lineController.lines.last else {
             oldestLine.text = "\"You don't have a line. \n Let's change that.\""
             return }
@@ -52,6 +50,14 @@ class LinesTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return "Feb 2019"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header = view as! UITableViewHeaderFooterView
+        
+        header.textLabel?.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        header.contentView.backgroundColor = #colorLiteral(red: 0.8860269189, green: 0.3269340992, blue: 0.3611180782, alpha: 1)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

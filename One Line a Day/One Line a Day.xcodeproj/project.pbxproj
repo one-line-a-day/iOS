@@ -19,7 +19,6 @@
 		394F88EC2208F6EA000BA548 /* LineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */; };
 		394F88EE2208F71A000BA548 /* LineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88ED2208F71A000BA548 /* LineDetailViewController.swift */; };
 		394F88F02208F728000BA548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88EF2208F728000BA548 /* ProfileViewController.swift */; };
-		39FD8B84220CA8F600E7D8DB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD8B83220CA8F600E7D8DB /* UserController.swift */; };
 		39FD8B86220CDA4800E7D8DB /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD8B85220CDA4800E7D8DB /* AuthenticationHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewCell.swift; sourceTree = "<group>"; };
 		394F88ED2208F71A000BA548 /* LineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetailViewController.swift; sourceTree = "<group>"; };
 		394F88EF2208F728000BA548 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		39FD8B83220CA8F600E7D8DB /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		39FD8B85220CDA4800E7D8DB /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				394F88DE2208BBE0000BA548 /* LineController.swift */,
-				39FD8B83220CA8F600E7D8DB /* UserController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -211,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39FD8B84220CA8F600E7D8DB /* UserController.swift in Sources */,
 				39FD8B86220CDA4800E7D8DB /* AuthenticationHelper.swift in Sources */,
 				394F88C32208AB32000BA548 /* AppDelegate.swift in Sources */,
 				394F88EE2208F71A000BA548 /* LineDetailViewController.swift in Sources */,
