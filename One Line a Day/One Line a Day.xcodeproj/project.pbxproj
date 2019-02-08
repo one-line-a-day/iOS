@@ -19,6 +19,7 @@
 		394F88EC2208F6EA000BA548 /* LineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */; };
 		394F88EE2208F71A000BA548 /* LineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88ED2208F71A000BA548 /* LineDetailViewController.swift */; };
 		394F88F02208F728000BA548 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394F88EF2208F728000BA548 /* ProfileViewController.swift */; };
+		39A093A1220CFEBE0079004C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A093A0220CFEBE0079004C /* StoreKit.framework */; };
 		39FD8B86220CDA4800E7D8DB /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FD8B85220CDA4800E7D8DB /* AuthenticationHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		394F88EB2208F6EA000BA548 /* LineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewCell.swift; sourceTree = "<group>"; };
 		394F88ED2208F71A000BA548 /* LineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetailViewController.swift; sourceTree = "<group>"; };
 		394F88EF2208F728000BA548 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		39A093A0220CFEBE0079004C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		39FD8B85220CDA4800E7D8DB /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A093A1220CFEBE0079004C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +59,7 @@
 			children = (
 				394F88C12208AB32000BA548 /* One Line a Day */,
 				394F88C02208AB32000BA548 /* Products */,
+				39A0939F220CFEBE0079004C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +140,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		39A0939F220CFEBE0079004C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39A093A0220CFEBE0079004C /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +180,11 @@
 				TargetAttributes = {
 					394F88BE2208AB32000BA548 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

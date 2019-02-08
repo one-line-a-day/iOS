@@ -54,6 +54,12 @@ class SignUpViewController: UIViewController {
         signupLabel.isHidden = false
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        usernameTextField.endEditing(true)
+        emailTextField.endEditing(true)
+        passwordTextField.endEditing(true)
+    }
+    
     // MARK: - Properties
     
     

@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wnZ-5J-yym">
-                                <rect key="frame" x="20" y="229.5" width="335" height="144"/>
+                                <rect key="frame" x="20" y="209.5" width="335" height="144"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MF4-LO-WYR">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -70,32 +70,36 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uwb2TGj" translatesAutoresizingMaskIntoConstraints="NO" id="Rn7-YF-Zx2">
-                                <rect key="frame" x="62.5" y="30" width="250" height="125"/>
+                                <rect key="frame" x="62.5" y="20" width="250" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rn7-YF-Zx2" secondAttribute="height" multiplier="2:1" id="4QS-oa-thj"/>
                                     <constraint firstAttribute="width" constant="250" id="8i0-lD-Oz0"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Sign Up first" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd2-dW-k3l">
-                                <rect key="frame" x="113" y="189" width="149.5" height="20.5"/>
+                                <rect key="frame" x="113" y="169" width="149.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.82135379310000001" green="0.36491739750000002" blue="0.3764574826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.22631523009999999" green="0.13506069779999999" blue="0.45884972810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wnZ-5J-yym" firstAttribute="centerX" secondItem="mDA-jH-wOP" secondAttribute="centerX" id="1bD-8Y-r0Q"/>
                             <constraint firstItem="Kd2-dW-k3l" firstAttribute="centerX" secondItem="mDA-jH-wOP" secondAttribute="centerX" id="2ke-5M-AKz"/>
                             <constraint firstItem="wnZ-5J-yym" firstAttribute="leading" secondItem="804-uJ-1Hy" secondAttribute="leading" constant="20" id="HnW-S0-RPQ"/>
                             <constraint firstItem="wnZ-5J-yym" firstAttribute="top" secondItem="Kd2-dW-k3l" secondAttribute="bottom" constant="20" id="Rad-7W-INW"/>
                             <constraint firstItem="Rn7-YF-Zx2" firstAttribute="centerX" secondItem="mDA-jH-wOP" secondAttribute="centerX" id="X3k-iI-EtT"/>
-                            <constraint firstItem="Rn7-YF-Zx2" firstAttribute="top" secondItem="804-uJ-1Hy" secondAttribute="top" constant="30" id="X7k-yX-UKD"/>
+                            <constraint firstItem="Rn7-YF-Zx2" firstAttribute="top" secondItem="804-uJ-1Hy" secondAttribute="top" constant="20" id="X7k-yX-UKD"/>
                             <constraint firstItem="804-uJ-1Hy" firstAttribute="trailing" secondItem="wnZ-5J-yym" secondAttribute="trailing" constant="20" id="ZiH-ci-0sY"/>
                             <constraint firstItem="Rn7-YF-Zx2" firstAttribute="width" secondItem="Rn7-YF-Zx2" secondAttribute="height" multiplier="2:1" id="fGU-y0-8o6"/>
-                            <constraint firstItem="wnZ-5J-yym" firstAttribute="centerY" secondItem="mDA-jH-wOP" secondAttribute="centerY" id="qfB-Dn-p7p"/>
+                            <constraint firstItem="wnZ-5J-yym" firstAttribute="centerY" secondItem="mDA-jH-wOP" secondAttribute="centerY" constant="-20" id="qfB-Dn-p7p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="804-uJ-1Hy"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="g1j-EX-KCd" appends="YES" id="A62-3G-Ayh"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="OeV-C1-3sP"/>
                     <connections>
@@ -107,6 +111,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foi-gb-CPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g1j-EX-KCd">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="Mra-MA-lDn" id="kSo-I3-fJr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="969" y="132"/>
         </scene>
@@ -376,6 +385,9 @@
                         <viewLayoutGuide key="safeArea" id="Qgb-IM-JbE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="wec-Hg-ksq"/>
+                    <connections>
+                        <outlet property="textField" destination="gfN-9x-uqi" id="bKu-qM-NfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZR-jf-nNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

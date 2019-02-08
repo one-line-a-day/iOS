@@ -11,9 +11,11 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBAction func done(_ sender: Any) {
+        textField.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
     
      // MARK: - Properties
     
+    @IBOutlet var textField: UITextField!
 }
